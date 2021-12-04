@@ -14,8 +14,8 @@ CHANNEL_NUMBER = 1
 TEMPO = 140
 BEATS_PER_BAR = 4
 BAR_LENGTH = 60/TEMPO*BEATS_PER_BAR
-MIDI_INPUT_PORT = 'loopMIDI Port 1'
-MIDI_OUTPUT_PORT = 'loopMIDI Port 2'
+MIDI_INPUT_PORT = 'humanizer 1'
+MIDI_OUTPUT_PORT = 'loopMIDI Port 1'
 SECTION_CONTROL_LIST = [1, 4, 7, 10, 13, 16, 19, 22]
 
 #Program initialise functions
@@ -40,7 +40,7 @@ def sync_song(SECTION_CONTROL_LIST):
     section_control_list = []
     MAIN_MESSAGE = ''
     while MAIN_MESSAGE != 'q':
-        print(f'Section {SECTION_NUMBER}')
+        print(f'\nSection {SECTION_NUMBER}')
         ALL_TRACKS_ARRAY, CONTROL_NUMBER = assign_section(MAIN_MESSAGE, CONTROL_NUMBER, CHANNEL_NUMBER)
         ALL_SECTIONS_ARRAY.append(ALL_TRACKS_ARRAY)
         section_control_list.append(SECTION_CONTROL_LIST[SECTION_NUMBER - 1])
